@@ -58,7 +58,7 @@ def fill_carts(cart_deck):
             weight[0] = "4"
         elif weight[0] == "A":
             weight[0] = "11"
-        i = {**cart, "name": i, "suit": weight[1], "points": weight[0]}
+        i = {"name": i, "suit": weight[1], "points": weight[0]}
         fill_cart_deck.append(i)
     return fill_cart_deck
 
@@ -69,11 +69,13 @@ def name_cards(card_order):
     :param card_order: словарь карт
     :return: список состоящий с назманий карт
     """
-    name_cards = []
+    name_cards = [i["name"] for i in card_order]
+    return name_cards
+    """name_cards = []
     for i in card_order:
         name_cards.append(i["name"])
     return name_cards
-
+"""
 
 def points_cards(card_order):
     """
